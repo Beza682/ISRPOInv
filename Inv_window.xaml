@@ -6,8 +6,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ISRPOInv"
         mc:Ignorable="d"
-        Title="Инвентаризация" Height="450" Width="800">
+        Title="Инвентаризация" Height="500" Width="1000" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid Margin="10,58,0,0" HorizontalAlignment="Left" Width="191" Height="334" VerticalAlignment="Top">
+            <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="90" Click="Monitor_Click" Background="White" Margin="10,57,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <materialDesign:PackIcon Kind="Monitor" Foreground="Black" Width="30" Height="28" />
+            </Button>
+            <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="221" Click="Table_Click" Background="White" Margin="10,191,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <materialDesign:PackIcon Kind="Desk" Foreground="Black" Width="30" Height="28" />
+            </Button>
+            <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="157" Click="Chair_Click" Background="White" Margin="10,123,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <materialDesign:PackIcon Kind="Chair" Foreground="Black" Width="30" Height="28" />
+            </Button>
+            <Button Height="43" Width="77" Canvas.Left="35" Canvas.Top="284" Click="Computer_Click" Background="White" Margin="10,258,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <materialDesign:PackIcon Kind="DesktopTower" Foreground="Black" Width="30" Height="28" />
+            </Button>
+
+            <TextBlock x:Name="Monitor_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" FontSize="18" Canvas.Left="160" Canvas.Top="99" Margin="123,65,0,0"/>
+            <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="92" Margin="92,258,0,0"/>
+            <TextBlock x:Name="Chair_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" FontSize="18" Canvas.Left="160" Canvas.Top="171" Margin="123,131,0,0"/>
+            <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="163" Margin="92,58,0,0"/>
+            <TextBlock x:Name="Table_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" FontSize="18" Canvas.Left="160" Canvas.Top="234" Margin="123,199,0,0"/>
+            <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="226" Margin="92,123,0,0"/>
+            <TextBlock x:Name="Computer_Case_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" FontSize="18" Canvas.Left="160" Canvas.Top="296" Margin="123,266,0,0"/>
+            <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="288" Margin="92,191,0,0"/>
+            <ComboBox  Name="Cb_CabInv" SelectedIndex="0" SelectionChanged="Cb_CabInv_SelectionChanged" Canvas.Left="198" Canvas.Top="32" Width="154" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <TextBlock>Общая инвентаризация</TextBlock>
+                <TextBlock>Кабинет 1</TextBlock>
+                <TextBlock>Кабинет 2</TextBlock>
+                <TextBlock>Кабинет 3</TextBlock>
+            </ComboBox>
+        </Grid>
+        <DataGrid Name="InvGrid"  AutoGenerateColumns="False" Margin="206,10" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding name}" Header="Оборудование" Width="150" FontWeight="Medium" />
+                <DataGridTextColumn Binding="{Binding cab}" Header="Кабинет" Width="150" FontWeight="Medium"/>
+                <DataGridTextColumn Binding="{Binding num}" Header="Инвентаризационный номер" Width="*" FontWeight="Medium"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Margin="0,72,10,0" HorizontalAlignment="Right" Width="191" Height="300" VerticalAlignment="Top">
+            <ComboBox  Name="Cb_Equipment" materialDesign:HintAssist.Hint="Оборудование" Canvas.Left="132" Canvas.Top="105" Width="160" Margin="0,80,21,0" HorizontalAlignment="Right" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.851">
+                <TextBlock>Монитор</TextBlock>
+                <TextBlock>Стол</TextBlock>
+                <TextBlock>Стул</TextBlock>
+                <TextBlock>Компьютер</TextBlock>
+            </ComboBox>
+
+            <ComboBox  Name="Cb_Cabinet_2" materialDesign:HintAssist.Hint="Кабинет" Canvas.Left="132" Canvas.Top="172" Margin="0,50,21,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="160">
+                <TextBlock>1</TextBlock>
+                <TextBlock>2</TextBlock>
+                <TextBlock>3</TextBlock>
+            </ComboBox>
+            <Button Content="Добавить" Height="28" Width="160" Canvas.Left="25" Canvas.Top="332" Click="Insert" Margin="0,154,21,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <Button Content="Удалить" Height="28" Width="160" Canvas.Left="161" Canvas.Top="332" Click="Delete" Margin="0,187,21,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        </Grid>
     </Grid>
 </Window>
