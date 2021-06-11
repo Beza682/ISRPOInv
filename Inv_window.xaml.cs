@@ -20,7 +20,7 @@ namespace ISRPOInv
     /// </summary>
     public partial class Inv_window : Window
     {
-        Database1Entities db = new Database1Entities();
+        Database1Entities db;
         public Inv_window()
         {
             InitializeComponent();
