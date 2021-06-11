@@ -30,7 +30,7 @@
             <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="226" Margin="92,123,0,0"/>
             <TextBlock x:Name="Computer_Case_Count" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" FontSize="18" Canvas.Left="160" Canvas.Top="296" Margin="123,266,0,0"/>
             <Label Content="—" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Canvas.Left="123" Canvas.Top="288" Margin="92,191,0,0"/>
-            <ComboBox  Name="Cb_CabInv" SelectedIndex="0" SelectionChanged="Cb_CabInv_SelectionChanged" Canvas.Left="198" Canvas.Top="32" Width="154" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <ComboBox  Name="Cb_CabInv" SelectionChanged="Cb_CabInv_SelectionChanged" Canvas.Left="198" Canvas.Top="32" Width="154" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <TextBlock>Общая инвентаризация</TextBlock>
                 <TextBlock>Кабинет 1</TextBlock>
                 <TextBlock>Кабинет 2</TextBlock>
@@ -45,14 +45,14 @@
             </DataGrid.Columns>
         </DataGrid>
         <Grid Margin="0,72,10,0" HorizontalAlignment="Right" Width="191" Height="300" VerticalAlignment="Top">
-            <ComboBox  Name="Cb_Equipment" materialDesign:HintAssist.Hint="Оборудование" Canvas.Left="132" Canvas.Top="105" Width="160" Margin="0,80,21,0" HorizontalAlignment="Right" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.851">
+            <ComboBox  Name="Cb_Equip" materialDesign:HintAssist.Hint="Оборудование" Canvas.Left="132" Canvas.Top="105" Width="160" Margin="0,80,21,0" HorizontalAlignment="Right" VerticalAlignment="Top" RenderTransformOrigin="0.486,0.851">
                 <TextBlock>Монитор</TextBlock>
                 <TextBlock>Стол</TextBlock>
                 <TextBlock>Стул</TextBlock>
                 <TextBlock>Компьютер</TextBlock>
             </ComboBox>
 
-            <ComboBox  Name="Cb_Cabinet_2" materialDesign:HintAssist.Hint="Кабинет" Canvas.Left="132" Canvas.Top="172" Margin="0,50,21,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="160">
+            <ComboBox  Name="Cb_Cab" materialDesign:HintAssist.Hint="Кабинет" Canvas.Left="132" Canvas.Top="172" Margin="0,50,21,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="160">
                 <TextBlock>1</TextBlock>
                 <TextBlock>2</TextBlock>
                 <TextBlock>3</TextBlock>

@@ -42,6 +42,7 @@ namespace ISRPOInv
             {
                 Hide();
                 new Inv_window().ShowDialog();
+                Application.Current.Shutdown();
             }
         }
     }
